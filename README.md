@@ -1,5 +1,11 @@
 # Disclosure Analyst
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-lightgrey)](#build-installers)
+[![Stars](https://img.shields.io/github/stars/sumeetdhingra/DisclosureAnalyst?style=social)](https://github.com/sumeetdhingra/DisclosureAnalyst/stargazers)
+
+> **If this saves you time, please [⭐ star the repo](https://github.com/sumeetdhingra/DisclosureAnalyst) — it helps others find it.**
+
 A cross-platform (macOS + Windows) desktop application that analyzes a ZIP archive of home purchase disclosure documents and produces a structured PDF report using Claude.
 
 The report covers:
@@ -88,3 +94,21 @@ To turn that into a real installer with Start menu shortcut and uninstaller:
 
 ## Model
 Uses `claude-opus-4-7` with streaming for long inputs. Edit `disclosure_analyst/analyzer.py` to change models or limits.
+
+## Design
+
+A detailed staff-level design document is available at [docs/DESIGN.md](docs/DESIGN.md) — covering architecture, data model, extraction/analysis/rendering pipelines, threading, packaging, security, and future work.
+
+## Contributing
+
+Pull requests and issues welcome at [github.com/sumeetdhingra/DisclosureAnalyst](https://github.com/sumeetdhingra/DisclosureAnalyst).
+
+If you found this project useful, please consider [⭐ starring it on GitHub](https://github.com/sumeetdhingra/DisclosureAnalyst) — it's the easiest way to support the project and helps other people discover it.
+
+## License
+
+Released under the [MIT License](LICENSE) © 2026 **Sumeet Dhingra**. You're free to use, modify, and redistribute the code; please retain visible credit to the original author and link back to the upstream repo.
+
+## Author
+
+Built by **Sumeet Dhingra** — [github.com/sumeetdhingra](https://github.com/sumeetdhingra).

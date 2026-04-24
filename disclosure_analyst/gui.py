@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 
 from PySide6.QtCore import QObject, Qt, QThread, QUrl, Signal
-from PySide6.QtGui import QAction, QIcon
+from PySide6.QtGui import QAction, QDesktopServices, QIcon
 from PySide6.QtPdf import QPdfDocument
 from PySide6.QtPdfWidgets import QPdfView
 from PySide6.QtWidgets import (
@@ -118,6 +118,12 @@ class MainWindow(QMainWindow):
         act_settings.triggered.connect(self.configure_api_key)
         toolbar.addAction(act_settings)
 
+        toolbar.addSeparator()
+        act_star = QAction("★ Star on GitHub", self)
+        act_star.setToolTip("Open the project page — please star it if it's useful!")
+        act_star.triggered.connect(self.open_github)
+        toolbar.addAction(act_star)
+
         central = QWidget()
         self.setCentralWidget(central)
         layout = QVBoxLayout(central)
@@ -167,6 +173,10 @@ class MainWindow(QMainWindow):
         self.analyze_btn.setEnabled(bool(self.zip_path) and self.thread is None)
         self.download_btn.setEnabled(bool(self.pdf_path))
         self.pick_btn.setEnabled(self.thread is None)
+
+    def open_github(self):
+        QDesktopServices.openUrl(
+            QUrl("https://github.com/sumeetdhingra/DisclosureAnalyst"))
 
     def configure_api_key(self):
         text, ok = QInputDialog.getText(

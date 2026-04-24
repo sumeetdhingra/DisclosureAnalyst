@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "disclosure-analyst"
+version = "1.0.0"
+description = "Analyze home purchase disclosure ZIP archives with Claude and produce a structured PDF report."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Disclosure Analyst" }]
+dependencies = [
+    "anthropic>=0.40.0",
+    "PySide6>=6.7.0",
+    "pypdf>=4.0.0",
+    "python-docx>=1.1.0",
+    "openpyxl>=3.1.0",
+    "xlrd>=2.0.1",
+    "reportlab>=4.0.0",
+]
+
+[project.scripts]
+disclosure-analyst = "disclosure_analyst.gui:main"
+
+[project.gui-scripts]
+DisclosureAnalyst = "disclosure_analyst.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["disclosure_analyst*"]
